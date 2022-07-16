@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Cats_abd_a_mouse {
+    public  static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t>0){
+            int diff1=0;int diff2=0;
+            int cat1=sc.nextInt();
+            int cat2=sc.nextInt();
+            int mouse=sc.nextInt();
+            diff1=mouse-cat1;
+            diff2=mouse-cat2;
+            if(diff1<0){
+                diff1=diff1*-1;
+            }
+            if(diff2<0){
+                diff2=diff2*-1;
+            }
+            if(diff1<diff2){
+                System.out.println("Cat A");
+            } else if (diff1>diff2) {
+                System.out.println("Cat B");
+            }
+            else{
+                System.out.println("Mouse C");
+            }
+            t--;
+        }
+    }
+}
