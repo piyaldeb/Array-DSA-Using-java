@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class Electronics_Shop {
+    public static void main(String[] arg) {
+        Scanner sc = new Scanner(System.in);
+        int budget = sc.nextInt();
+        int c = 0;
+        int k = 0;
+        int sum = 0;
+        int size1 = sc.nextInt();
+        int size2 = sc.nextInt();
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        int arr1[] = new int[size1];
+        for (int i = 0; i < size1; i++) {
+            arr1[i] = sc.nextInt();
+        }
+        int arr2[] = new int[size2];
+        for (int i = 0; i < size2; i++) {
+            arr2[i] = sc.nextInt();
+        }
+        int arr3[] = new int[budget];
+
+        for (int i = 0; i < arr1.length; i++) {
+            for (int j = 0; j < arr2.length; j++) {
+                sum = arr1[i] + arr2[j];
+                if (sum <= budget) {
+                    arr3[k] = sum;
+                    k++;
+                } else {
+                    c++;
+                }
+            }
+        }
+
+
+        if (c == size1 * size2) {
+            System.out.println(-1);
+            System.exit(0);
+        }
+
+
+        for (int i = 0; i < arr3.length; i++) {
+            if (max < arr3[i]) {
+                max = Math.max(arr3[i], max);
+            }
+
+        }
+        System.out.println(max);
+
+
+    }
+}
+
+
+
+
