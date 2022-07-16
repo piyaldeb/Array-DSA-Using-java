@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class SLIDING_WINDOW {
+    public static  void main(String arg[]){
+        int arr[]=new int[]{2,3,4,1,6,8,0,6};
+        int temp=0;int ans=0;
+        Scanner sc=new Scanner(System.in);
+        int key= sc.nextInt();
+        for(int i=0;i< arr.length;i++){
+            if(arr[i]==key){
+                temp=i;
+                break;
+            }
+
+        }
+        for(int i=0;i<temp;i++){
+            ans=Math.max(arr[i],arr[i+1]);
+
+        }
+        System.out.println(ans);
+    }
+}
