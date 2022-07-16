@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Utopian_Tree_HackerRank {
+    public static void main(String [] args){
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        int h=1;
+        while(t>0){
+            int day=sc.nextInt();
+            h=1;
+            for(int i=1;i<=day;i++){
+                if(i%2==0){
+                    h=h+1;
+                }
+                else {
+                    h=h*2;
+                }
+            }
+            System.out.println(h);
+            t--;
+        }
+    }
+}
