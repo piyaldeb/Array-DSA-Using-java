@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.util.concurrent.SynchronousQueue;
+
+public class First_negative_number_sliding_window {
+    public static  void main(String arg[]){
+        int arr[]=new int[]{1,-2,-3,4,-5,6,-7,8};
+        Scanner sc=new Scanner(System.in);
+        int key=sc.nextInt();
+        for(int i=0;i< arr.length-(key-1);i++){
+            for(int j=i;j<i+key;j++){
+                if(arr[j]<0){
+                    System.out.print(arr[j]+" ");
+                    break;
+                }
+            }
+        }
+    }
+}
