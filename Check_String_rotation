@@ -1,0 +1,18 @@
+public class Check_String_rotation {
+    public  static void main(String [] arg){
+        String s1="ABCD";
+        String s2="BCDA";
+        String s3=s1+s1;
+        int  l1=s1.length();
+        int l2=s2.length();
+        if(l1!=l2){
+            System.out.println("NO");
+            System.exit(0);
+        }
+        if(s3.indexOf(s2)!=-1){
+            System.out.println("YES");
+        }else{
+            System.out.println("NO");
+        }
+    }
+}
