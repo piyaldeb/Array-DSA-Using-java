@@ -1,0 +1,26 @@
+public class Greatest_English_Letter_in_Upper_and_Lower_Case {
+    public  static void main(String arg[]){
+        String str="EeWsdR";
+
+        int arr[]=new int[26];
+        for(int i=0;i<26;i++){
+            arr[i]=0;
+        }
+        for(int i=0;i<str.length();i++){
+            char c=str.charAt(i);
+            if(c>='a' && c<='z'){
+                ++arr[c-'A'];
+            }
+            else{
+                arr[c-'a']+=2;
+            }
+        }
+        for(int i=25;i>=0;i--){
+            if(arr[i]==3){
+                System.out.println(Character.toString(i+'A'));
+                System.exit(0);
+            }
+        }
+
+    }
+}
