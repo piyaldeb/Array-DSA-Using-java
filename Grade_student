@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Grade_student {
+    public  static  void main(String arg[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int num,sum=0;
+     while(n>0){
+         num=sc.nextInt();
+         if(num>=38) {
+             if (num % 5 >= 3) {
+                 num = (num + 5) - (num % 5);
+             }
+         }
+         System.out.println(num);
+         n--;
+         }
+
+    }
+
+}
