@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Scanner;
+
+public class circular_array_rotation_HackerRank {
+
+    public  static  void  main(String [] arg){
+        Scanner sc=new Scanner(System.in);
+        int  size=sc.nextInt();
+        int count=sc.nextInt();
+        int queries=sc.nextInt();
+        ArrayList<Integer> arr=new ArrayList<>(size);
+        for(int i=0;i<size;i++){
+            int temp=sc.nextInt();
+            arr.add(temp);
+        }
+        for(int i=0;i<count;i++){
+        arr.set(i, arr.get(size-1));
+        arr.remove(size-1);
+        }
+        for (int i=0;i<queries;i++){
+            System.out.println(arr.get(i));
+        }
+    }
+}
