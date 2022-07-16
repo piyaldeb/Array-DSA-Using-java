@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Apple_And_Orange_HackerRank {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int c1 = 0;
+        int c2 = 0;
+        int s = sc.nextInt();
+        int e = sc.nextInt();
+        int ts = sc.nextInt();
+        int te = sc.nextInt();
+        int apple = sc.nextInt();
+        int orange = sc.nextInt();
+        int apple1[] = new int[apple];
+        int orange2[] = new int[orange];
+        for (int i = 0; i < apple; i++) {
+            apple1[i] = sc.nextInt();
+        }
+        for (int i = 0; i < orange; i++) {
+            orange2[i] = sc.nextInt();
+        }
+        for (int i = 0; i < apple; i++) {
+            if (apple1[i] < 0) {
+                apple1[i] = 0;
+            }
+        }
+        for (int i = 0; i < orange; i++) {
+            if (orange2[i] > 0) {
+                orange2[i] = 0;
+            }
+        }
+        for (int i = 0; i < orange; i++) {
+            if (orange2[i] < 0) {
+                orange2[i] = orange2[i] * -1;
+            }
+        }
+
+            for (int i = 0; i < apple; i++) {
+                if (apple1[i] + ts >= s && apple1[i] + ts <= e) {
+                    c1++;
+                }
+            }
+            for (int i = 0; i < orange; i++) {
+                if (te - orange2[i] >= s && te - orange2[i] <= e) {
+                    c2++;
+                }
+            }
+            System.out.println(c1);
+            System.out.println(c2);
+        }
+    }
+
+
+
+
