@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Bill_split_HackerRank {
+
+    public  static  void main(String [] arg){
+        Scanner sc=new Scanner(System.in);
+        int n= sc.nextInt();
+        int index=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int charge=sc.nextInt();
+        arr[index]=0;
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum=sum+arr[i];
+        }
+        int div=sum/2;
+        if(div==charge){
+            System.out.println("Bon Appetit");
+        }
+        else{
+            int refund=(charge-div);
+            System.out.println(refund);
+        }
+
+
+
+    }
+}
