@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Mini_Max_Sum {
+    public  static void  main(String [] arg){
+        Scanner sc=new Scanner(System.in);
+
+        long max=Integer.MIN_VALUE;
+        long min=Integer.MAX_VALUE;
+        int arr[]=new int[5];
+        long  result[]=new long[5];
+        for(int i=0;i<5;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<5;i++){
+            long sum=0;
+            for(int j=0;j<5;j++){
+                if(i==j){
+                    sum=sum+0;
+                }
+                else{
+                    sum=sum+arr[j];
+                }
+//                if(max<sum) {
+//                    max = Math.max(max, sum);
+//                }
+//
+//                    else if(min>sum){
+//                        min=Math.min(min,sum);
+//                    }
+
+
+            }
+            result[i]=sum;
+
+
+
+
+        }
+        for(int i=0;i<5;i++){
+           if(result[i]>max){
+               max=Math.max(max,result[i]);
+           } else if (result[i]<min) {
+               min=Math.min(min,result[i]);
+
+           }
+        }
+        System.out.print(min);
+        System.out.println(" "+ max);
+    }
+}
