@@ -1,0 +1,25 @@
+import java.rmi.UnexpectedException;
+import java.util.Scanner;
+
+public class Find_Digit {
+    public  static void main(String[] arg){
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while (t>0){
+            long n=sc.nextInt();
+            long m=n;
+            long sum;
+            int c=0;
+            while (m!=0) {
+                sum = m%10;
+                if(sum!=0 && m%sum==0){
+                    c++;
+                }
+                m=m/10;
+            }
+            System.out.println(c);
+            t--;
+
+        }
+    }
+}
