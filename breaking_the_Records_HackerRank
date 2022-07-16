@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class breaking_the_Records_HackerRank {
+    public  static  void  main(String arg[]){
+        Scanner sc=new Scanner(System.in);
+        int  size=sc.nextInt();
+        int arr[]=new int[size];
+        int countw=0;
+        int countb=0;
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        int fdayw=arr[0];
+        int fdayb=arr[0];
+        for(int i=1;i<size;i++){
+            if(fdayw>arr[i]){
+                fdayw=arr[i];
+                countw++;
+
+            } else if (fdayb<arr[i]) {
+                fdayb=arr[i];
+                countb++;
+            }
+        }
+        System.out.print(countb +" ");
+        System.out.println(countw);
+    }
+}
