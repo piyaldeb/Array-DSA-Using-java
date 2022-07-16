@@ -1,0 +1,32 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Picking_numbers_HackeRank {
+    public static void main(String [] arg){
+        Scanner sc=new Scanner(System.in);
+        int max=Integer.MIN_VALUE;
+        int n=sc.nextInt();
+        int count=0;
+        int arr[]=new int[n];
+        int arr1[]=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        Arrays.sort(arr);
+        for(int i=0;i<n-1;i++){
+            count=0;
+            for(int j= i+1;j<n;j++){
+                if(arr[j]-arr[i]==1 || arr[j]-arr[i]==0){
+                    count++;
+                }
+            }
+            arr1[i]=count;
+        }
+        for(int i=0;i<arr1.length;i++){
+            if(max<arr1[i]){
+                max=Math.max(arr1[i],max);
+            }
+        }
+        System.out.println(max+1);
+    }
+}
