@@ -1,0 +1,40 @@
+import javax.swing.plaf.IconUIResource;
+
+public class Permutation_2 {
+    public static void main(String arg[]) {
+        String a="abbc";
+        String b="babc";
+        int count=0;
+        int arr[]=new int[256];
+        if(a.length()!=b.length()){
+            System.out.println("no");
+            System.exit(0);
+        }
+        else{
+            for(int i=0;i<256;i++){
+                arr[i]=0;
+            }
+            for(int i=0;i<a.length();i++){
+                char ch=a.charAt(i);
+                arr[ch]++;
+            }
+            for(int i=0;i<b.length();i++){
+                char ch=b.charAt(i);
+                arr[ch]--;
+            }
+            for(int i=0;i<256;i++){
+                if(arr[i]!=0){
+                    System.out.println("false");
+                    System.exit(0);
+
+                }
+                else{
+                    count++;
+                }
+            }
+            if(count==arr.length){
+                System.out.println("true");
+            }
+        }
+    }
+}
